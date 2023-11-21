@@ -1,0 +1,35 @@
+BEGIN;
+
+
+#CREATE TABLE IF NOT EXISTS "Funcionarios"(
+
+);
+
+
+#CREATE TABLE IF NOT EXISTS "MedVet"(
+
+);
+
+
+#CREATE TABLE IF NOT EXISTS "Consulta"(
+
+);
+
+
+#CREATE TABLE IF NOT EXISTS "Animais"(
+
+);
+
+
+#CREATE TABLE IF NOT EXISTS "Agendamento"(
+
+);
+
+#CREATE TABLE IF NOT EXISTS "Tutor"(
+
+);
+
+
+#CREATE TABLE IF NOT EXISTS "Possui"(
+
+);
