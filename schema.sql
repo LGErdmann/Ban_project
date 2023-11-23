@@ -23,11 +23,20 @@ CREATE TABLE IF NOT EXISTS "MedVet"(
 
 
 CREATE TABLE IF NOT EXISTS "Consulta"(
+    "CodCOnsulta" SERIAL PRIMARY KEY NOT NULL,
+    "ObsVet" VARCHAR(100) NOT NULL,
+    "PrescVet" VARCHAR(100) NOT NULL   
 
 );
 
 
 CREATE TABLE IF NOT EXISTS "Animais"(
+    "idAnimal" SERIAL PRIMARY KEY NOT NULL,
+    "Idade" INTEGER NOT NULL,
+    "Peso" INTEGER NOT NULL,
+    "Raça" VARCHAR(20) NOT NULL,
+    "Nome" VARCHAR(20) NOT NULL,
+    
 
 );
 
