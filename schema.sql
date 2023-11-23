@@ -36,6 +36,10 @@ CREATE TABLE IF NOT EXISTS "Animais"(
     "Peso" INTEGER NOT NULL,
     "Raça" VARCHAR(20) NOT NULL,
     "Nome" VARCHAR(20) NOT NULL,
+    "idAnimal" INTEGER NULL,
+    "TamanhoBox" VARCHAR(20) NULL,
+
+
     
 
 );
