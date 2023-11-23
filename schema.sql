@@ -13,6 +13,11 @@ CREATE TABLE IF NOT EXISTS "Funcionarios"(
 
 
 CREATE TABLE IF NOT EXISTS "MedVet"(
+    "idFunc" INTEGER PRIMARY KEY NOT NULL,
+    "Turno" VARCHAR(50) NOT NULL,
+    "Especialização" VARCHAR(100) NOT NULL,
+    
+    FOREIGN KEY ("idFunc") REFERENCES "Funcionarios"
 
 );
 
