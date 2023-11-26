@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import psycopg2
 
+
 def name_field(cur):
     field_names = [i[0] for i in cur.description]
     return field_names 
@@ -33,3 +34,5 @@ def select_element(conn,element,nome):
     elementor = Tabela[element].tolist()
         
     return elementor
+
+

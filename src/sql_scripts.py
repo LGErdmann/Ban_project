@@ -4,6 +4,7 @@ import psycopg2
 from helpers import name_field
 
 
+
 def join_at_All_possui(conn):
     cur = conn.cursor()
     cur.execute(  

@@ -5,9 +5,6 @@ from helpers import tabel_printer, FOREIGN_KEY_field
 from sql_scripts import join_at_All_possui
 conn = get_conn()
 
-
-
-
 NomeTabela = st.selectbox(
                         'Verificar tabela',
                         ('Animal','Funcionario','Tutor','Consulta','Agendamento'),

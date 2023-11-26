@@ -43,8 +43,8 @@ CREATE TABLE IF NOT EXISTS "Agendamento"(
     "NumProtocolo" SERIAL NOT NULL,
     "CodConsulta" INTEGER NOT NULL,
     "IdFunc" INTEGER NOT NULL,
-    "DataAgend" VARCHAR(20) NOT NULL,
-    "HoraAgend" VARCHAR(10) NOT NULL,
+    "DataAgend" DATE NOT NULL,
+    "HoraAgend" TIME NOT NULL,
 
 
     PRIMARY KEY ("NumProtocolo", "CodConsulta"),
