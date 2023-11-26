@@ -6,7 +6,8 @@ def name_field(cur):
     field_names = [i[0] for i in cur.description]
     return field_names 
 
-def tabel_printer(cur,Nome):
+def tabel_printer(conn,Nome):
+    cur = conn.cursor()
     cur.execute(f'SELECT * FROM "{Nome}"')
     columns = name_field(cur)
     df = cur.fetchall()
