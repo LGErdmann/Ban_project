@@ -4,9 +4,9 @@ CREATE TABLE IF NOT EXISTS "Funcionario"(
     "id" SERIAL PRIMARY KEY NOT NULL,
     "Cargo" VARCHAR(50) NOT NULL,
     "Setor" VARCHAR(50) NOT NULL,
-    "Telefone" VARCHAR(20) NOT NULL,
+    "Telefone" VARCHAR(11) NOT NULL,
     "Email" VARCHAR(100) NOT NULL,
-    "Salário" INTEGER NOT NULL,
+    "Salario" INTEGER NOT NULL,
     "Nome" VARCHAR(100) NOT NULL
 );
 
@@ -50,18 +50,18 @@ CREATE TABLE IF NOT EXISTS "Agendamento"(
     PRIMARY KEY ("NumProtocolo", "CodConsulta"),
 
     FOREIGN KEY ("CodConsulta") REFERENCES "Consulta",
-    FOREIGN KEY ("IdFunc") REFERENCES "Funcionarios"
+    FOREIGN KEY ("IdFunc") REFERENCES "Funcionario"
 
 
 
 );
 
 CREATE TABLE IF NOT EXISTS "Tutor"(
-    "CPF" VARCHAR(14) PRIMARY KEY NOT NULL,
+    "CPF" VARCHAR(11) PRIMARY KEY NOT NULL,
     "Email" VARCHAR(30) NOT NULL,
     "Endereço" VARCHAR(100) NOT NULL,
     "Nome" VARCHAR(30) NOT NULL,
-    "Telefone" VARCHAR(20) NOT NULL
+    "Telefone" VARCHAR(11) NOT NULL
     
 
 );
