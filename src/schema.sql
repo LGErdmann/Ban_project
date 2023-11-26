@@ -24,7 +24,10 @@ CREATE TABLE IF NOT EXISTS "MedVet"(
 CREATE TABLE IF NOT EXISTS "Consulta"(
     "CodConsulta" SERIAL PRIMARY KEY NOT NULL,
     "ObsVet" VARCHAR(100) NOT NULL,
-    "PrescVet" VARCHAR(100) NOT NULL   
+    "PrescVet" VARCHAR(100) NOT NULL,
+    "idAnimal" INTEGER NOT NULL,
+
+    FOREIGN KEY ("idAnimal") REFERENCES "Animal"
 
 );
 
