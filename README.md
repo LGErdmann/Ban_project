@@ -11,21 +11,14 @@ Breve descrição do seu projeto.
 ## Instalação
 É necessário a instalação prévia do python em versão igual ou superior à 3.11.
 
-Caso estaja no windows a instlação das dependências deve ser feita com o comando:
+Caso estaja no windows ou no linux a instlação das dependências deve ser feita com o comando:
 
 ```
 pip install -r requirements.txt
 ```
 
 
-Caso estaja no Linux a instlação das dependências deve ser feita com o comando:
-
-```
-pip install -r requirements.txt 
-
-```
-
-Ou através do poetry, para mais segurança em um ambiente virtual
+Ou através do poetry, para mais segurança em utilizando um ambiente virtual
 caso opte pela instalção utilizando poetry é necessário possuir 
 o mesmo em seu computador, segue o comando para instalção
 
