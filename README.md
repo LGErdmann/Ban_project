@@ -71,8 +71,9 @@ Streamlit run Home.py
 ## pg-admin
 O projeto foi todo realizado com PostgreSQL e Python
 as principais funções que contém os scripts SQL estão contidas
-em sql_scripts.py com exceção dos INSERTs que estão em suas respectivas páginas
-e visualização de cada uma das tabelas que se encontra dentro de helpers.py
+em sql_scripts.py com exceção dos INSERTs que estão em suas respectivas páginas.
+
+A visualização de cada uma das tabelas se encontra dentro do arquivo helpers.py
 
 ```bash
 def tabel_printer(conn,Nome):
