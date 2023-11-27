@@ -21,15 +21,6 @@ CREATE TABLE IF NOT EXISTS "MedVet"(
 );
 
 
-CREATE TABLE IF NOT EXISTS "Consulta"(
-    "CodConsulta" SERIAL PRIMARY KEY NOT NULL,
-    "ObsVet" VARCHAR(100) NOT NULL,
-    "PrescVet" VARCHAR(100) NOT NULL,
-    "idAnimal" INTEGER NOT NULL,
-
-    FOREIGN KEY ("idAnimal") REFERENCES "Animal"
-
-);
 
 CREATE TABLE IF NOT EXISTS "Animal"(
     "idAnimal" SERIAL PRIMARY KEY NOT NULL,
@@ -44,15 +35,15 @@ CREATE TABLE IF NOT EXISTS "Animal"(
 
 CREATE TABLE IF NOT EXISTS "Agendamento"(
     "NumProtocolo" SERIAL NOT NULL,
-    "CodConsulta" INTEGER NOT NULL,
+    "idAnimal" INTEGER NOT NULL,
     "IdFunc" INTEGER NOT NULL,
-    "DataAgend" DATE NOT NULL,
-    "HoraAgend" TIME NOT NULL,
+    "DataAgend" DATE UNIQUE NOT NULL,
+    "HoraAgend" TIME UNIQUE NOT NULL,
 
 
-    PRIMARY KEY ("NumProtocolo", "CodConsulta"),
+    PRIMARY KEY ("NumProtocolo"),
 
-    FOREIGN KEY ("CodConsulta") REFERENCES "Consulta",
+    FOREIGN KEY ("idAnimal") REFERENCES "Animal",
     FOREIGN KEY ("IdFunc") REFERENCES "Funcionario"
 
 
@@ -82,4 +73,11 @@ CREATE TABLE IF NOT EXISTS "Possui"(
 );
 
 
+CREATE TABLE IF NOT EXISTS "Consulta"(
+    "NumProtocolo" INTEGER PRIMARY KEY NOT NULL,
+    "ObsVet" VARCHAR(100) NOT NULL,
+    "PrescVet" VARCHAR(100) NOT NULL,
 
+    FOREIGN KEY ("NumProtocolo") REFERENCES "Agendamento"
+
+);

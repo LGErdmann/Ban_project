@@ -21,10 +21,18 @@ def join_at_All_possui(conn):
 
 
 
-def join_at_All(cur,nomePrincipal,nome2,idPrincipla,id2):
-    cur.execute(   
-        f'SELECT *'
-        f'FROM "{nomePrincipal}"'
-        f'JOIN "{nome2}" ON "{nomePrincipal}"."{idPrincipla}" = "{nome2}"."{idPrincipla}"'
-        f'JOIN possui ON animal.id_animal = possui.id_animal;'
-        )
+def join_at_cosulta_protocolo(conn,Num):
+    cur = conn.cursor()
+    cur.execute(  
+        'SELECT c."NumProtocolo", a."idAnimal", t."CPF" AS "CPF do Tutor", ag."DataAgend"'
+        ' FROM "Consulta" c'
+        ' JOIN "Agendamento" ag ON c."NumProtocolo" = ag."NumProtocolo"'
+        ' JOIN "Animal" a ON ag."idAnimal" = a."idAnimal"'
+        ' JOIN "Possui" p ON a."idAnimal" = p."idAnimal"'
+        ' JOIN "Tutor" t ON p."CPF" = t."CPF"'
+        f' WHERE c."NumProtocolo" = {Num}'
+    )
+    df = cur.fetchall()
+    Tabela = pd.DataFrame(df, columns=['Numero de protocolo','ID Pet','CPF do tutor','Data agendamento'])
+    cur.close()
+    return st.dataframe(Tabela)

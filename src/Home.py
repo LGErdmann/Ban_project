@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 from Conection import get_conn
-from helpers import tabel_printer, FOREIGN_KEY_field
-from sql_scripts import join_at_All_possui
+from helpers import tabel_printer, select_element
+from sql_scripts import join_at_All_possui, join_at_cosulta_protocolo
 conn = get_conn()
 
 NomeTabela = st.selectbox(
@@ -12,8 +12,8 @@ NomeTabela = st.selectbox(
 
 
 if NomeTabela != None:
+    tabel_printer(conn,NomeTabela)
     if NomeTabela == 'Animal' or NomeTabela == 'Tutor':
-        tabel_printer(conn,NomeTabela)
         check, tabelAnimal = st.columns(2)
         with check:
             if NomeTabela == 'Animal':
@@ -22,11 +22,19 @@ if NomeTabela != None:
                 join_possui = st.checkbox('Mostrar animais')
         if join_possui:
             join_at_All_possui(conn)
-    else:
-        tabel_printer(conn,NomeTabela)
-        #print(cur.fetchall())
-        #cur.close()
-        
+   
+   
+    if NomeTabela == 'Consulta':
+        check, tabelAnimal = st.columns(2)
+        with check:
+            Num = st.selectbox('Verificar tabela',
+                            (select_element(conn,"NumProtocolo","Consulta")),
+                            index=None
+                            )
+
+        if Num:
+                join_at_cosulta_protocolo(conn,Num)
+
         
 
 

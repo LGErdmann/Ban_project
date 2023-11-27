@@ -29,6 +29,7 @@ def select_element(conn,element,nome):
     cur.execute(f'SELECT "{element}" FROM "{nome}"')
     columns = name_field(cur)
     df = cur.fetchall()
+    conn.close
     cur.close
     Tabela = pd.DataFrame(df, columns=columns)
     elementor = Tabela[element].tolist()
