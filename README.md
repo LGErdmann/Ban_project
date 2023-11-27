@@ -6,8 +6,6 @@ Breve descrição do seu projeto.
 
 - [Instalação](#instalação)
 - [Como Usar](#como-usar)
-- [Contribuindo](#contribuindo)
-- [Licença](#licença)
 
 ## Instalação
 É necessário a instalação prévia do python em versão igual ou superior à 3.11.
@@ -46,5 +44,25 @@ logo após:
 poetry install
 ```
 Para fazer a intalação das dependências dentro do ambiente virtual. 
+
+## como-usar
+
+Dentro de seu/caminho/Ban_project/src vá ate o o arquivo Conection.py
+onde vai ser feita a configuração da conexão com o banco:
+
+```python
+def get_conn():
+    conn = psycopg2.connect(
+        host='localhost',
+        port='5432',
+        database='postgres',
+        user='postgres',
+        password='postgres'
+    )
+    return conn
+```
+
+
+
 
 
