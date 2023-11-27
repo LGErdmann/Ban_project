@@ -16,13 +16,16 @@ Breve descrição do seu projeto.
 
 ```bash
 pip install -r requirements.txt
+
 ```
 
     Caso estaja no Linux a instlação das dependências deve ser feita com o comando:
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt 
+
 ```
+
     Ou através do poetry, para mais segurança em um ambiente virtual
     caso opte pela instalção utilizando poetry é necessário possuir 
     o mesmo em seu computador, segue o comando para instalção
