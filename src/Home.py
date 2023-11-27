@@ -17,7 +17,7 @@ with col3:
     st.write(' ')
 NomeTabela = st.selectbox(
                         'Verificar tabela',
-                        ('Animal','Funcionario','Tutor','Consulta','Agendamento','MedVet'),
+                        ('Animal','Funcionario','Tutor','Consulta','Agendamento','MedVet','Possui'),
                         index=None)
 
 
