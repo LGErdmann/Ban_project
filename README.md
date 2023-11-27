@@ -66,7 +66,7 @@ O projeto foi todo realizado com PostgreSQL e Python
 as principais funções que contém os scripts SQL estão contidas
 em sql_scripts.py com exceção dos INSERTs que estão em suas respectivas páginas.
 
-A visualização de cada uma das tabelas se encontra dentro do arquivo helpers.py
+A visualização de cada uma das tabelas se encontra dentro do arquivo helpers.py, que é chamado por Home.py.
 
 ```bash
 def tabel_printer(conn,Nome):
