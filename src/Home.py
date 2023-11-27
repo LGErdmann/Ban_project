@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from Conection import get_conn
 from helpers import tabel_printer, select_element
-from sql_scripts import join_at_All_possui, join_at_cosulta_protocolo
+from sql_scripts import join_at_All_possui, join_at_cosulta_protocolo, sub_and_agr
 conn = get_conn()
 
 NomeTabela = st.selectbox(
@@ -24,16 +24,26 @@ if NomeTabela != None:
             join_at_All_possui(conn)
    
    
-    if NomeTabela == 'Consulta':
+    if NomeTabela == 'Consulta' or NomeTabela == 'Agendamento':
         check, tabelAnimal = st.columns(2)
         with check:
-            Num = st.selectbox('Verificar tabela',
+            Num = st.selectbox('Verificar Protocolo',
                             (select_element(conn,"NumProtocolo","Consulta")),
                             index=None
                             )
 
         if Num:
                 join_at_cosulta_protocolo(conn,Num)
+
+    if NomeTabela == 'Funcionario':
+        check, tabelAnimal = st.columns(2)
+        sub = st.checkbox('Funcionário com maior salário')
+        with check:
+            if sub:
+                sub_and_agr(conn)
+            
+
+    
 
         
 

@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS "Agendamento"(
     PRIMARY KEY ("NumProtocolo"),
 
     FOREIGN KEY ("idAnimal") REFERENCES "Animal",
-    FOREIGN KEY ("IdFunc") REFERENCES "Funcionario"
+    FOREIGN KEY ("IdFunc") REFERENCES "MedVet"
 
 
 

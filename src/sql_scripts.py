@@ -36,3 +36,13 @@ def join_at_cosulta_protocolo(conn,Num):
     Tabela = pd.DataFrame(df, columns=['Numero de protocolo','ID Pet','CPF do tutor','Data agendamento'])
     cur.close()
     return st.dataframe(Tabela)
+
+def sub_and_agr(conn):
+    cur = conn.cursor()
+    cur.execute(
+        'SELECT "id", "Nome", "Salario" FROM "Funcionario" WHERE "Salario" = (SELECT MAX("Salario") FROM "Funcionario")'
+        )
+    df = cur.fetchall()
+    Tabela = pd.DataFrame(df,columns=['idFuncionário','Nome Funcionario','Salário'])
+    cur.close()
+    return st.dataframe(Tabela)

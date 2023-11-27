@@ -19,6 +19,7 @@ def FOREIGN_KEY_field(cur,id,Nome):
     cur.execute(f'SELECT * FROM "{Nome}" ORDER BY "{id}" DESC LIMIT 1')
     
     key = cur.fetchone()[0]
+    cur.close
 
     return key
 
