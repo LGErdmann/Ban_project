@@ -19,6 +19,22 @@ def join_at_All_possui(conn):
     cur.close()
     return st.dataframe(Tabela)
 
+def join_at_one_possui(conn,cpf):
+    cur = conn.cursor()
+    cur.execute(
+        'SELECT t."CPF", t."Nome", a."idAnimal", a."Nome"'
+        ' FROM "Tutor" as t'
+        ' JOIN "Possui" ON t."CPF" = "Possui"."CPF"'
+        ' JOIN "Animal" AS a ON a."idAnimal" = "Possui"."idAnimal"'
+        ' WHERE "Possui"."CPF" = %s',
+        (cpf,)
+    )
+    #columns = name_field(cur)
+    df = cur.fetchall()
+    Tabela = pd.DataFrame(df, columns=['CPF Tutor','Nome Tutor','ID Pet','Nome Pet' ])
+    cur.close()
+    return st.dataframe(Tabela)
+
 
 
 def join_at_cosulta_protocolo(conn,Num):
