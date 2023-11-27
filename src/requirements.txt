@@ -1,6 +1,5 @@
 altair==5.1.2
 attrs==23.1.0
--e git+https://github.com/LGErdmann/Ban_project.git@2246960ffd00ca5b01f45e7dc79b7a6fe291ec53#egg=ban_project&subdirectory=src
 blinker==1.7.0
 cachetools==5.3.2
 certifi==2023.11.17
