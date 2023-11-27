@@ -5,9 +5,19 @@ from helpers import tabel_printer, select_element
 from sql_scripts import join_at_All_possui, join_at_cosulta_protocolo, sub_and_agr
 conn = get_conn()
 
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.write(' ')
+
+with col2:
+   st.image("logo.png")
+
+with col3:
+    st.write(' ')
 NomeTabela = st.selectbox(
                         'Verificar tabela',
-                        ('Animal','Funcionario','Tutor','Consulta','Agendamento'),
+                        ('Animal','Funcionario','Tutor','Consulta','Agendamento','MedVet'),
                         index=None)
 
 
