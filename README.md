@@ -6,6 +6,7 @@ Breve descrição do seu projeto.
 
 - [Instalação](#instalação)
 - [Como Usar](#como-usar)
+- [PostgreSQL](#pg-admin)
 
 ## Instalação
 É necessário a instalação prévia do python em versão igual ou superior à 3.11.
@@ -47,7 +48,7 @@ Para fazer a intalação das dependências dentro do ambiente virtual.
 
 ## como-usar
 
-Dentro de seu/caminho/Ban_project/src vá ate o o arquivo Conection.py
+Dentro de seu/caminho/Ban_project/src exiteo o arquivo Conection.py
 onde vai ser feita a configuração da conexão com o banco:
 
 ```python
@@ -61,6 +62,23 @@ def get_conn():
     )
     return conn
 ```
+(O comando deve ser executado dentro da pasta /SRC)
+Após configurar como desejado execute o comando:
+
+```bash
+Streamlit run Home.py
+```
+## pg-admin
+O projeto foi todo realizado com PostgreSQL e Python
+as principais funções que contém os scripts SQL estão contidas
+em sql_scripts.py com exceção dos INSERTs que estão em suas respectivas páginas
+e visualização de cada uma das tabelas que se encontra dentro de helpers.py
+
+```bash
+def tabel_printer(conn,Nome):
+```
+
+
 
 
 
