@@ -17,7 +17,6 @@ Breve descrição do seu projeto.
 ```bash
 pip install -r requirements.txt
 
-```
 
     Caso estaja no Linux a instlação das dependências deve ser feita com o comando:
 
