@@ -18,9 +18,9 @@ pip install -r requirements.txt
 ```
 
 
-Ou através do poetry, para mais segurança em utilizando um ambiente virtual
+Ou através do poetry, para mais segurança utilizando um ambiente virtual,
 caso opte pela instalção utilizando poetry é necessário possuir 
-o mesmo em seu computador, segue o comando para instalção
+o mesmo em seu computador, segue o comando para instalção:
 
 ```
 pip install poetry
